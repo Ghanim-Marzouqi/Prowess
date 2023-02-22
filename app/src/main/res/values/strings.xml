@@ -21,4 +21,10 @@
     <string name="profile">Profile</string>
     <string name="next">NEXT</string>
     <string name="skip">SKIP</string>
+    <string name="enter_first_name">Enter First Name</string>
+    <string name="enter_last_name">Enter Last Name</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="middle_name">Middle Name</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
 </resources>

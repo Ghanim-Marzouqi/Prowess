@@ -1,66 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/secondary"
+    tools:context=".RegistrationActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_full_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/et_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintVertical_chainStyle="packed">
 
         <EditText
             android:id="@+id/et_first_name"
-            android:layout_width="match_parent"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:hint="First Name" />
+            android:background="@drawable/edittext"
+            android:ems="10"
+            android:hint="@string/first_name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/accent" />
+
+        <EditText
+            android:id="@+id/et_middle_name"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext"
+            android:ems="10"
+            android:hint="@string/middle_name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/accent"
+            tools:layout_editor_absoluteX="250dp" />
 
         <EditText
             android:id="@+id/et_last_name"
-            android:layout_width="match_parent"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:hint="Last Name" />
+            android:background="@drawable/edittext"
+            android:ems="10"
+            android:hint="@string/last_name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/accent"
+            tools:layout_editor_absoluteX="500dp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <EditText
-            android:id="@+id/et_age"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:hint="Age" />
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:ems="10"
+        android:hint="@string/enter_email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/accent"
+        app:layout_constraintBottom_toTopOf="@+id/et_phone"
+        app:layout_constraintEnd_toEndOf="@+id/ll_full_name"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/ll_full_name"
+        app:layout_constraintTop_toBottomOf="@+id/ll_full_name"
+        app:layout_constraintVertical_bias="0.5"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <EditText
-            android:id="@+id/et_address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Address" />
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:ems="10"
+        android:hint="@string/enter_phone_number"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/accent"
+        app:layout_constraintBottom_toTopOf="@+id/et_password"
+        app:layout_constraintEnd_toEndOf="@+id/et_email"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/et_email"
+        app:layout_constraintTop_toBottomOf="@+id/et_email"
+        app:layout_constraintVertical_bias="0.5"
+        tools:ignore="SpeakableTextPresentCheck,TextFields" />
 
-        <EditText
-            android:id="@+id/et_height"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
-            android:hint="Height (in cm)" />
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:ems="10"
+        android:hint="Enter Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/accent"
+        app:layout_constraintBottom_toTopOf="@+id/et_confirm_password"
+        app:layout_constraintEnd_toEndOf="@+id/et_phone"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/et_phone"
+        app:layout_constraintTop_toBottomOf="@+id/et_phone"
+        app:layout_constraintVertical_bias="0.5"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <EditText
-            android:id="@+id/et_weight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
-            android:hint="Weight (in kg)" />
+    <EditText
+        android:id="@+id/et_confirm_password"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/accent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_sign_up"
+        app:layout_constraintEnd_toEndOf="@+id/et_password"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/et_password"
+        app:layout_constraintTop_toBottomOf="@+id/et_password"
+        app:layout_constraintVertical_bias="0.5"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <Spinner
-            android:id="@+id/sp_diabetes_type"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:spinnerMode="dropdown"
-            android:entries="@array/diabetes_types" />
+    <Button
+        android:id="@+id/btn_sign_up"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:background="@drawable/button"
+        android:text="@string/sign_up"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/et_confirm_password"
+        app:layout_constraintTop_toBottomOf="@+id/et_confirm_password"
+        app:layout_constraintVertical_bias="0.5" />
 
-        <Button
-            android:id="@+id/btn_sign_up"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Register" />
-
-    </LinearLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
